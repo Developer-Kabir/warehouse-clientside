@@ -1,0 +1,31 @@
+.contact-area{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 40px;
+}
+
+.link-contact{
+    background-color: red;
+    color: white;
+    padding: 30px;
+}
+
+.contact-location{
+    background-color: red;
+    color: white;
+    padding: 30px;
+}
+
+.newslatter{
+    background-color: red;
+    color: white;
+    padding: 30px;
+}
+
+.contact-input{
+    width: 90%;
+    border: none;
+    height: 40px;
+    background-color: #E7E8E8;
+    border-radius: 10px;
+}

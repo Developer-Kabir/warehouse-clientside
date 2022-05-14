@@ -1,0 +1,14 @@
+.footer{
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 60px;
+    color: white;
+    padding: 20px 50px;
+}
+
+.sublink{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 50px;
+}
