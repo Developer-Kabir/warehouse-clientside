@@ -26,6 +26,8 @@ const BuySellCar = () => {
                 </div>
             </div>
         </div>
+
+
     );
 };
 

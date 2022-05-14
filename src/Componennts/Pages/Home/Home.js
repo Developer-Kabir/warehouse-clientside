@@ -3,6 +3,7 @@ import About from '../About/About';
 import Banner from '../Banner/Banner';
 import BuySellCar from '../BuySellCar/BuySellCar';
 import Cars from '../Cars/Cars';
+import Clients from '../Clients/Clients';
 import WhatYouCan from '../What you Can/WhatYouCan';
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
             <About></About>
             <Cars></Cars>
             <BuySellCar></BuySellCar>
+            <Clients></Clients>
         </div>
     );
 };

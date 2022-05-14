@@ -1,0 +1,25 @@
+.clients{
+    margin-top: 30px;
+}
+
+.clients p{
+    color: #9999B3;
+    text-align: center;
+}
+.clients h2{
+    text-align: center;
+    margin-top: -15px;
+
+}
+
+.brand{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 20px 50px;
+}
+
+.brand img{
+    margin-left: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
