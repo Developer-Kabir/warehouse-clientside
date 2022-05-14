@@ -1,0 +1,32 @@
+.about{
+    margin: 30px 50px 0px 50px;
+}
+
+.about p{
+    color: #9999B3;
+}
+
+.about-flex{
+    width: 50%;
+    margin: 0px 10px;
+}
+
+.aboutIcon{
+    font-size: 30px;
+    margin-right: 5px;
+    padding: 10px;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.aboutIcon:hover{
+    color: red;
+    border: 3px solid red;
+    border-radius: 50%;
+}
+
+.about-extra{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 40px 10px;
+}
