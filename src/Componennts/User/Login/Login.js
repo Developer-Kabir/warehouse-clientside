@@ -10,6 +10,7 @@ import auth from '../../../firebase.init';
 import useToken from '../../../Hooks/useToken';
 import Loading from '../../Shared Components/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import './Login.css'
 
 const Login = () => {
     const emailRef = useRef('');
@@ -44,7 +45,7 @@ const Login = () => {
     }
 
     if (error) {
-        errorMessage = <p className='text-danger'>Error: {error.message}</p>
+        errorMessage = <p className='text-dark'>Error: {error.message}</p>
     }
 
     if (token) {
@@ -67,21 +68,21 @@ const Login = () => {
     }
     return (
         <div className='w-50 mx-auto mt-5'>
-            <h2 className='text-warning text-center mb-4'>Please Login</h2>
-            <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+            <h2 className='text-dark fw-bold text-center mb-4'>PLEASE LOGIN</h2>
+            <Form className='form-design' onSubmit={handleSubmit}>
+                <Form.Group className='form-design-input mb-3' controlId="formBasicEmail">
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className='form-design-input mb-3' controlId="formBasicPassword">
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Button className='mb-3 w-50 mx-auto text-white fw-bold d-block' variant="success" type="submit">
+                <Button className='mb-3 w-50 mx-auto text-white fw-bold d-block' variant="dark" type="submit">
                     Login
                 </Button>
             </Form>
             {errorMessage}
-            <p className='text-center'>New to this site? <Link to="/register" onClick={navigateSignUp} className='text-success pe-auto text-decoration-none' >Please Register</Link> </p>
+            <p className='text-center'>New to this site? <Link to="/signUp" onClick={navigateSignUp} className='text-success pe-auto text-decoration-none' >Please Register</Link> </p>
             <p className='text-center'>Forget Password?<button className='btn btn-link text-warning pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
             <SocialLogin></SocialLogin>
             <ToastContainer />

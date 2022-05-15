@@ -1,0 +1,14 @@
+.form-design{
+    width: 500px ;
+    margin: 30px auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 5px 5px 5px #aaaaaa;
+}
+
+
+.form-design-input {
+    border: 2px solid #aaaaaa;
+    border-radius: 10px;
+}

@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import './SignUp.css'
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
@@ -47,20 +48,20 @@ const SignUp = () => {
     }
     return (
         <div className='w-50 mx-auto my-5'>
-        <h2 className='text-warning text-center mb-3'>Please Register</h2>
-      <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="">
+        <h2 className='text-black fw-bold text-center mb-3'>SIGN UP FIRST</h2>
+      <Form className='form-design' onSubmit={handleSubmit}>
+      <Form.Group className="mb-3 form-design-input" controlId="">
               <Form.Control ref={nameRef} type="text" placeholder="Enter Your Name" required />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+          <Form.Group className="mb-3 form-design-input" controlId="formBasicEmail">
+              <Form.Control ref={emailRef} type="email" placeholder="Enter Ymail" required />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3 form-design-input" controlId="formBasicPassword">
               <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
           </Form.Group>
-          <Button className='w-50 mx-auto d-block text-white fw-bold' variant="success" type="submit">
+          <Button className='w-50 mx-auto d-block text-white fw-bold' variant="dark" type="submit">
               Register
           </Button>
       </Form>

@@ -19,7 +19,7 @@ const SocialLogin = () => {
     let from = location.state?.from?.pathname || "/";
 
     if (error) {
-        errorMessage = <p className='text-danger text-center'>Error: {error.message}</p>
+        errorMessage = <p className='text-dark text-center'>Error: {error.message}</p>
     }
 
     if (loading) {
@@ -40,7 +40,7 @@ const SocialLogin = () => {
             {errorMessage}
 
             <div>
-                <Button onClick={() => signInWithGoogle()} className='w-50 d-block mx-auto mb-5' variant="success" type="submit">
+                <Button onClick={() => signInWithGoogle()} className='w-50 d-block mx-auto mb-5' variant="dark" type="submit">
                     <i className="text-warning fa-brands fa-google"></i>  Sign in with Google
                 </Button>
             </div>
