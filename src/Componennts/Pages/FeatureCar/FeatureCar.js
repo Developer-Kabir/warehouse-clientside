@@ -1,23 +1,29 @@
+import React from 'react';
 import useCar from '../../../Hooks/useCar';
 import SingleCar from '../SingleCar/SingleCar';
-import './Cars.css'
+import './FeatureCar.css'
 
-const Cars = () => {
-const [cars] = useCar([]);
+const FeatureCar = () => {
 
+    const [cars] = useCar([]);
+    const sliceCar = cars.slice(0,6);
 
     return (
-        <div>
+        <div className='cars'>
+            <p>Check out our recent cars</p>
+            <h2>FEATURE CAR</h2>
+
             <div className='car-container'>
                 {
-                    cars.map(car => <SingleCar
+                    sliceCar.map(car => <SingleCar
                         key={car._id}
                         car={car}
                     ></SingleCar>)
                 }
             </div>
+
         </div>
     );
 };
 
-export default Cars;
+export default FeatureCar;

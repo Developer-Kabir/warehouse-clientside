@@ -2,7 +2,9 @@ import React from 'react';
 import './Contact.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocation, faMailBulk, faPhone } from '@fortawesome/free-solid-svg-icons'
-import { Button } from 'react-bootstrap';
+import { Button, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { faForward } from '@fortawesome/free-solid-svg-icons'
 
 
 const Contact = () => {
@@ -18,6 +20,15 @@ const Contact = () => {
                 <div className='link-contact'>
                     <h4>USEFUL LINKS</h4>
                     <hr />
+                    <Nav.Link as={Link} to="/blog" className='text-light login-btn'>
+                        <p><FontAwesomeIcon icon={faForward} /> Blog</p>
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="/about" className='text-light login-btn'>
+                        <p><FontAwesomeIcon icon={faForward} /> About</p>
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="/car" className='text-light login-btn'>
+                        <p><FontAwesomeIcon icon={faForward} /> Our All Car</p>
+                    </Nav.Link>
                 </div>
                 <div className='newslatter'>
                     <h4>Subscribe Our Newslatter</h4>

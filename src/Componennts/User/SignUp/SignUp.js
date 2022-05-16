@@ -4,9 +4,9 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
-
 import useToken from '../../../Hooks/useToken';
 import Loading from '../../Shared Components/Loading/Loading';
+
 
 
 const SignUp = () => {
@@ -68,6 +68,7 @@ const SignUp = () => {
       <p className='text-center mt-2'>Already have an account? <Link to="/login" onClick={navigateLogin} className='text-success pe-auto text-decoration-none' >Please Login</Link> </p>
             
         </div>
+
     );
 };
 

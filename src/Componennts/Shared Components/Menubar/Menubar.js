@@ -2,8 +2,13 @@ import React from 'react';
 import './Menubar.css'
 import { Link } from 'react-router-dom';
 import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const Menubar = () => {
+
+    const [user] = useAuthState(auth);
+
     return (
         <div className='menu'>
             <Navbar bg="light" expand="lg">
@@ -18,11 +23,24 @@ const Menubar = () => {
                         >
                             <Nav.Link as={Link} to="home">Home</Nav.Link>
                             <Nav.Link as={Link} to="about">About</Nav.Link>
-                            <Nav.Link as={Link} to="car">Feature Car</Nav.Link>
+                            <Nav.Link as={Link} to="cars">Car</Nav.Link>
                             <Nav.Link as={Link} to="blog">Blog</Nav.Link>
                             <Nav.Link as={Link} to="contact">Contact</Nav.Link>
+                            
                         </Nav>
-                        <Form className="d-flex">
+                        {
+                            user?
+                            <Nav
+                            className="me-auto abcd my-lg-0 fw-bold"
+                            style={{ maxHeight: '100px' }}
+                            navbarScroll
+                           >
+                                 <Nav.Link to="myitem">My Item</Nav.Link>
+                                 <Nav.Link to="manage">Manage Item</Nav.Link>
+                                 <Nav.Link to="additem">Add Item</Nav.Link>
+                          </Nav>
+                            :
+                            <Form className="d-flex">
                             <FormControl
                                 type="search"
                                 placeholder="Search"
@@ -31,6 +49,9 @@ const Menubar = () => {
                             />
                             <Button variant="outline-success">Search</Button>
                         </Form>
+                           
+                          
+                        }
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
