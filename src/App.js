@@ -10,6 +10,8 @@ import SignUp from './Componennts/User/SignUp/SignUp';
 import Contact from './Componennts/Pages/Contact/Contact';
 import Blog from './Componennts/Pages/Blog/Blog';
 import Cars from './Componennts/Pages/Cars/Cars'
+import MyItem from './Componennts/Pages/MyItem/MyItem';
+import Manageitem from './Componennts/Pages/Manageitem/Manageitem';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
        <Route path='contact'  element={<Contact></Contact>}></Route>
        <Route path='blog' element={<Blog></Blog>} ></Route>
        <Route path='cars' element={<Cars></Cars>}></Route>
+       <Route path='myitem' element={<MyItem></MyItem>}></Route>
+       <Route path="/manage" element={<Manageitem></Manageitem>}></Route>
   
      </Routes>
      <Footer></Footer>

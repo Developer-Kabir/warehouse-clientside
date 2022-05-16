@@ -35,9 +35,9 @@ const Menubar = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                            >
-                                 <Nav.Link to="myitem">My Item</Nav.Link>
-                                 <Nav.Link to="manage">Manage Item</Nav.Link>
-                                 <Nav.Link to="additem">Add Item</Nav.Link>
+                                 <Nav.Link as={Link} to="myitem">My Item</Nav.Link>
+                                 <Nav.Link as={Link} to="manage">Manage Item</Nav.Link>
+                                 <Nav.Link as={Link} to="additem">Add Item</Nav.Link>
                           </Nav>
                             :
                             <Form className="d-flex">
