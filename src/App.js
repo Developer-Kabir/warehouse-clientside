@@ -12,6 +12,8 @@ import Blog from './Componennts/Pages/Blog/Blog';
 import Cars from './Componennts/Pages/Cars/Cars'
 import MyItem from './Componennts/Pages/MyItem/MyItem';
 import Manageitem from './Componennts/Pages/Manageitem/Manageitem';
+import AddItem from './Componennts/Pages/AddItem/AddItem';
+import CarDetail from './Componennts/Pages/CarDetail/CarDetail';
 
 function App() {
   return (
@@ -29,6 +31,9 @@ function App() {
        <Route path='cars' element={<Cars></Cars>}></Route>
        <Route path='myitem' element={<MyItem></MyItem>}></Route>
        <Route path="/manage" element={<Manageitem></Manageitem>}></Route>
+       <Route path='additem' element={<AddItem></AddItem>}></Route>
+
+       <Route path='/car/:carId' element={<CarDetail></CarDetail>}></Route>
   
      </Routes>
      <Footer></Footer>

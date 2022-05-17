@@ -1,41 +1,40 @@
 import axios from 'axios';
 import { signOut } from 'firebase/auth';
-import React, { useEffect} from 'react';
+import React, { useEffect, useState} from 'react';
 import { Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
-import useCar from '../../../Hooks/useCar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const Mycars = () => {
+const Myitems = () => {
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
-    const [cars, setCars] = useCar([]);
+    const [items, setItems] = useState([]);
     const email = user.email;
 
     useEffect(() => {
-        const url = `http://localhost:3000/mycars?email=${email}`;
-        const getMycars = async () => {
+        const url = `http://localhost:3000/myitems?email=${email}`;
+        const getMyitems = async () => {
 
             await axios.get(url)
                 .then(response => {
-                    setCars(response.data);
+                    setItems(response.data);
                 })
             try {
 
                 const { data } = await axios.get(url, {
                     headers: {
-                        authorization: `Bearer ${localStorage.getcars("accessToken")}`,
+                        authorization: `Bearer ${localStorage.getitems("accessToken")}`,
                     },
                 })
 
                     .then(response => {
-                        setCars(data);
+                        setItems(data);
                     })
             } catch (error) {
                 console.log(error.message);
@@ -45,20 +44,20 @@ const Mycars = () => {
                 }
             }
         }
-        getMycars();
+        getMyitems();
     }, [user.email])
 
-    const deleteFromMycars = async (id) => {
+    const deleteFromMyitems = async (id) => {
 
-        const deleteMycars = window.confirm('Are you sure to delete this cars?');
-        if (deleteMycars) {
-            const url = `https://safe-everglades-50788.herokuapp.com/mycars/${id}`;
+        const deleteMyitems = window.confirm('Are you sure to delete this items?');
+        if (deleteMyitems) {
+            const url = `https://safe-everglades-50788.herokuapp.com/myitems/${id}`;
 
             await axios.delete(url)
                 .then(response => {
                     if (response.data.deletedCount === 1) {
-                        const restcars = cars.filter(cars => cars._id !== id);
-                        setCars(restcars);
+                        const restitems = items.filter(items => items._id !== id);
+                        setItems(restitems);
                         toast.success('Delete Successfully')
                     }
                 })
@@ -68,7 +67,7 @@ const Mycars = () => {
     }
     return (
         <div className='my-5'>
-            <h1 className='text-warning text-center'>My cars</h1>
+            <h1 className='text-dark fw-bold text-center'>MY ADDED CAR as PRODUCT</h1>
             <div className='col col-md-10 offset-md-1 my-5'>
                 <Table striped bordered hover>
 
@@ -84,13 +83,13 @@ const Mycars = () => {
                     </thead>
                     <tbody>
                         {
-                            cars.map((cars, index) =>
-                                <tr key={cars._id}>
+                            items.map((items, index) =>
+                                <tr key={items._id}>
                                     <td>{index + 1}</td>
-                                    <td className='text-start'>{cars.name}</td>
-                                    <td>$ {cars.price}</td>
-                                    <td>{cars.quantity}</td>
-                                    <td><button className='btn btn-light border-0' onClick={() => deleteFromMycars(cars._id)}><FontAwesomeIcon className='fw-bold text-danger display-6' icon={faTrash} /></button></td>
+                                    <td className='text-start'>{items.name}</td>
+                                    <td>$ {items.price}</td>
+                                    <td>{items.quantity}</td>
+                                    <td><button className='btn btn-light border-0' onClick={() => deleteFromMyitems(items._id)}><FontAwesomeIcon className='fw-bold text-danger display-6' icon={faTrash} /></button></td>
                                 </tr>
                             )
                         }
@@ -103,4 +102,4 @@ const Mycars = () => {
     );
 };
 
-export default Mycars;
+export default Myitems;

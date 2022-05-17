@@ -1,8 +1,15 @@
 import React from 'react';
-import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Button, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const SingleCar = ({car}) => {
-    const { name, price , Description, quantity, supplier, picture} = car;
+    const { _id, name, price , Description, quantity, supplier, picture} = car;
+    const navigate = useNavigate();
+
+    const navigateToCarDetail = id =>{
+        navigate(`car/${id}`);
+    }
+
     return (
         <div>
             <Card style={{ width: '25rem' }}>
@@ -18,6 +25,7 @@ const SingleCar = ({car}) => {
                     <ListGroupItem>Quantity : {quantity} </ListGroupItem>
                     <ListGroupItem>Supplier : {supplier} </ListGroupItem>
                 </ListGroup>
+                <Button onClick={()=> navigateToCarDetail(_id)} variant='dark'>Update Stock</Button>
             </Card>
         </div>
     );
