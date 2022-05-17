@@ -47,7 +47,7 @@ const SignUp = () => {
         navigate('/login')
     }
     return (
-        <div className='w-50 mx-auto my-5'>
+        <div className='mx-auto my-5'>
         <h2 className='text-black fw-bold text-center mb-3'>SIGN UP FIRST</h2>
       <Form className='form-design' onSubmit={handleSubmit}>
       <Form.Group className="mb-3 form-design-input" controlId="">

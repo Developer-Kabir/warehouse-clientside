@@ -20,7 +20,7 @@ const ContactHeader = () => {
 
     return (
         <div className='abc'>
-            <div className='contact-header d-flex justify-content-between'>
+            <div className='contact-header'>
                 <div className='t&m d-flex justify-content-between'>
                     <p><FontAwesomeIcon icon={faClock} /> 10:00 AM To 5:00 PM</p>
                     <p className='ms-3'><FontAwesomeIcon icon={faEnvelope} /> support@elegentcar.com</p>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import './SingleCar.css'
 
 const SingleCar = ({car}) => {
     const { _id, name, price , Description, quantity, supplier, picture} = car;
@@ -12,7 +13,7 @@ const SingleCar = ({car}) => {
 
     return (
         <div>
-            <Card style={{ width: '25rem' }}>
+            <Card className='car-card'>
                 <Card.Img variant="top" src={picture} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>

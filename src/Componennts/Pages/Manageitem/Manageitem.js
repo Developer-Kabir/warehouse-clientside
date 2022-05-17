@@ -11,7 +11,7 @@ const Manageitem = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `https://safe-everglades-50788.herokuapp.com/inventory/${id}`;
+            const url = `http://localhost:5000/car/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

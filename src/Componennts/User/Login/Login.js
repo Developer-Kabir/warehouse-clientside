@@ -65,7 +65,7 @@ const Login = () => {
         navigate('/register')
     }
     return (
-        <div className='w-50 mx-auto mt-5'>
+        <div className='mx-auto mt-5'>
             <h2 className='text-dark fw-bold text-center mb-4'>PLEASE LOGIN</h2>
             <Form className='form-design' onSubmit={handleSubmit}>
                 <Form.Group className='form-design-input mb-3' controlId="formBasicEmail">

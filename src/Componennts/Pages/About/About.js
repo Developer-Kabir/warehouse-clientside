@@ -8,7 +8,7 @@ import { faCashRegister } from '@fortawesome/free-solid-svg-icons'
 
 const About = () => {
     return (
-        <div className='d-flex about'>
+        <div className='about'>
             <div className='about-flex'>
                 <div>
                     <h2>ABOUT CAR DEALER</h2>

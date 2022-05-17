@@ -14,6 +14,8 @@ import MyItem from './Componennts/Pages/MyItem/MyItem';
 import Manageitem from './Componennts/Pages/Manageitem/Manageitem';
 import AddItem from './Componennts/Pages/AddItem/AddItem';
 import CarDetail from './Componennts/Pages/CarDetail/CarDetail';
+import RequiredAuth from './Componennts/Shared Components/RequiredAuth/RequiredAuth';
+
 
 function App() {
   return (
@@ -29,11 +31,27 @@ function App() {
        <Route path='contact'  element={<Contact></Contact>}></Route>
        <Route path='blog' element={<Blog></Blog>} ></Route>
        <Route path='cars' element={<Cars></Cars>}></Route>
-       <Route path='myitem' element={<MyItem></MyItem>}></Route>
-       <Route path="/manage" element={<Manageitem></Manageitem>}></Route>
-       <Route path='additem' element={<AddItem></AddItem>}></Route>
+       <Route path='myitem' element={
+       <RequiredAuth>
+         <MyItem></MyItem>
+       </RequiredAuth>
+       }></Route>
+       <Route path="/manage" element={
+         <RequiredAuth>
+           <Manageitem></Manageitem>
+         </RequiredAuth>
+       }></Route>
+       <Route path='additem' element={
+         <RequiredAuth>
+           <AddItem></AddItem>
+         </RequiredAuth>
+       }></Route>
 
-       <Route path='/car/:carId' element={<CarDetail></CarDetail>}></Route>
+       <Route path='/car/:carId' element={
+         <RequiredAuth>
+           <CarDetail></CarDetail>
+         </RequiredAuth>
+       }></Route>
   
      </Routes>
      <Footer></Footer>

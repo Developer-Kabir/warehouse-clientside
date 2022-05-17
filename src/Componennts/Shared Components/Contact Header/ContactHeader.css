@@ -5,7 +5,8 @@
 }
 
 .contact-header{
-
+    display: flex; 
+    justify-content: space-between;
     padding: 10px 50px 0px 50px ;
 }
 .contact-header p{
@@ -19,3 +20,12 @@ p:hover {
 .login-btn{
     margin-top: -10px;
 }
+
+
+@media only screen and (max-width: 640px) {
+    .contact-header{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 10px 20px 0px 20px ;
+    }
+  }

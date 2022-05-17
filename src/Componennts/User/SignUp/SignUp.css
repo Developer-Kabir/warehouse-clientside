@@ -12,3 +12,14 @@
     border: 2px solid #aaaaaa;
     border-radius: 10px;
 }
+
+@media only screen and (max-width: 640px) {
+    .form-design{
+        width: 400px ;
+        margin: 30px auto;
+        background-color: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 5px 5px 5px #aaaaaa;
+    }
+  }

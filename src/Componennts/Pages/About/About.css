@@ -1,5 +1,6 @@
 .about{
     margin: 30px 50px 0px 50px;
+    display: flex;
 }
 
 .about p{
@@ -30,3 +31,16 @@
     grid-template-columns: repeat(2, 1fr);
     margin: 40px 10px;
 }
+
+@media only screen and (max-width: 640px) {
+    .about{
+        margin: 50px 20px 0px 20px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .about-flex{
+        width: 100%;
+        margin: 0px 10px;
+    }
+  }

@@ -22,3 +22,30 @@
 .desc{
     margin: 30px 20px 0px 20px ;
 }
+
+
+@media only screen and (max-width: 640px) {
+    .buySell{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .buyCar{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 80%;
+        color: white;
+        padding: 20px;
+        margin: 10px 50px;
+
+    }
+    .SellCar{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 80%;
+        color: white;
+        padding: 20px;
+        margin: 10px 50px;
+    }
+
+  }

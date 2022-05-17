@@ -16,9 +16,10 @@ const Myitems = () => {
     const [user] = useAuthState(auth);
     const [items, setItems] = useState([]);
     const email = user.email;
+    console.log(email);
 
     useEffect(() => {
-        const url = `http://localhost:3000/myitems?email=${email}`;
+        const url = `http://localhost:5000/myitem?email=${email}`;
         const getMyitems = async () => {
 
             await axios.get(url)
@@ -51,7 +52,7 @@ const Myitems = () => {
 
         const deleteMyitems = window.confirm('Are you sure to delete this items?');
         if (deleteMyitems) {
-            const url = `https://safe-everglades-50788.herokuapp.com/myitems/${id}`;
+            const url = `http://localhost:5000/myitem/${id}`;
 
             await axios.delete(url)
                 .then(response => {

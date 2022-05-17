@@ -21,12 +21,10 @@ const Menubar = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link as={Link} to="home">Home</Nav.Link>
                             <Nav.Link as={Link} to="about">About</Nav.Link>
                             <Nav.Link as={Link} to="cars">Car</Nav.Link>
                             <Nav.Link as={Link} to="blog">Blog</Nav.Link>
-                            <Nav.Link as={Link} to="contact">Contact</Nav.Link>
-                            
+                            <Nav.Link as={Link} to="contact">Contact</Nav.Link> 
                         </Nav>
                         {
                             user?
