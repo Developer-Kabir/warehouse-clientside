@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     color: white;
-    padding: 40px 50px;
+    padding: 10px 50px;
 }
 
 .sublink{

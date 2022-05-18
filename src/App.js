@@ -15,6 +15,7 @@ import Manageitem from './Componennts/Pages/Manageitem/Manageitem';
 import AddItem from './Componennts/Pages/AddItem/AddItem';
 import CarDetail from './Componennts/Pages/CarDetail/CarDetail';
 import RequiredAuth from './Componennts/Shared Components/RequiredAuth/RequiredAuth';
+import ERROR from './Componennts/Shared Components/ERROR/ERROR';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Header></Header>  
   
      <Routes>
+       <Route path='*' element={<ERROR></ERROR>}></Route>
        <Route path='home' element={<Home></Home>}></Route>
        <Route path='/' element={<Home></Home>}></Route>
        <Route path='login'  element={<Login></Login>}></Route>
