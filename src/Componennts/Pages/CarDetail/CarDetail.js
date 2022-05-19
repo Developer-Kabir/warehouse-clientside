@@ -10,13 +10,13 @@ const CarDetail = () => {
   let { quantity } = item;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/car/${carId}`)
+    fetch(`https://salty-meadow-11371.herokuapp.com/car/${carId}`)
       .then(res => res.json())
       .then(data => setItem(data))
-  }, [item])
+  }, [carId])
 
   const handleDeliverd = () => {
-    const url = `http://localhost:5000/car/${carId}`
+    const url = `https://salty-meadow-11371.herokuapp.com/car/${carId}`
 
     if (quantity > 0) {
       quantity = quantity - 1;
@@ -68,7 +68,7 @@ const CarDetail = () => {
     const updatedQuantity = oldQuantity + newQuantity
     const updatedCar = { ...item, quantity: updatedQuantity }
     console.log(updatedCar)
-    const url = `http://localhost:5000/car/${carId}`
+    const url = `https://salty-meadow-11371.herokuapp.com/car/${carId}`
     fetch(url, {
       method: 'put',
       headers: {

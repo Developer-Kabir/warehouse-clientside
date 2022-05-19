@@ -27,7 +27,7 @@ const AddItem = () => {
             email
         }
 
-        const url = 'http://localhost:5000/car';
+        const url = 'https://salty-meadow-11371.herokuapp.com/car';
         fetch(url, {
             method: 'POST',
             headers: {

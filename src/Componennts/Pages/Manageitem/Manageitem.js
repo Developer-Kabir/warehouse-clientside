@@ -11,13 +11,13 @@ const Manageitem = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/car/${id}`;
+            const url = `https://salty-meadow-11371.herokuapp.com/car/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    
                     const remaining = cars.filter(item => item._id !== id);
                     setCars(remaining);
                 })
@@ -44,7 +44,7 @@ const Manageitem = () => {
                                 <th scope="row">{item.name}</th>
                                 <td>{item.price}</td>
                                 <td>{item.quantity}</td>
-                                <td onClick={() => handleDelete(cars._id)}><FontAwesomeIcon className='fw-bold text-danger display-6' icon={faTrash} /></td>
+                                <td onClick={() => handleDelete(item._id)}><FontAwesomeIcon className='fw-bold text-danger display-6' icon={faTrash} /></td>
                             </tr>
 
 

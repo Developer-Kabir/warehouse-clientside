@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState} from 'react';
 import { Table } from 'react-bootstrap';
@@ -8,7 +7,7 @@ import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-
+const axios = require('axios');
 
 
 const Myitems = () => {
@@ -19,7 +18,7 @@ const Myitems = () => {
     console.log(email);
 
     useEffect(() => {
-        const url = `http://localhost:5000/myitem?email=${email}`;
+        const url = `https://salty-meadow-11371.herokuapp.com/myitem?email=${email}`;
         const getMyitems = async () => {
 
             await axios.get(url)
@@ -46,13 +45,15 @@ const Myitems = () => {
             }
         }
         getMyitems();
-    }, [user.email])
+    }, [email, navigate])
+
+
 
     const deleteFromMyitems = async (id) => {
 
         const deleteMyitems = window.confirm('Are you sure to delete this items?');
         if (deleteMyitems) {
-            const url = `http://localhost:5000/myitem/${id}`;
+            const url = `https://salty-meadow-11371.herokuapp.com/myitem/${id}`;
 
             await axios.delete(url)
                 .then(response => {

@@ -9,6 +9,7 @@ import useToken from '../../../Hooks/useToken';
 import Loading from '../../Shared Components/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
+const axios = require('axios');
 
 const Login = () => {
     const emailRef = useRef('');
@@ -38,7 +39,9 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        await signInWithEmailAndPassword(email, password)
+        await signInWithEmailAndPassword(email, password);
+        const {data} = await axios.post('https://salty-meadow-11371.herokuapp.com/login', {email});
+        console.log(data);
 
     }
 
@@ -68,6 +71,7 @@ const Login = () => {
         <div className='mx-auto mt-5'>
             <h2 className='text-dark fw-bold text-center mb-4'>PLEASE LOGIN</h2>
             <Form className='form-design' onSubmit={handleSubmit}>
+    
                 <Form.Group className='form-design-input mb-3' controlId="formBasicEmail">
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
                 </Form.Group>

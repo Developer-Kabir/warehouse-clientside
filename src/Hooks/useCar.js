@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const useCar = () => {
     const [cars, setCars] = useState([]);
     useEffect(() =>{
-        fetch("http://localhost:5000/car")
+        fetch("https://salty-meadow-11371.herokuapp.com/car")
         .then(res=> res.json())
         .then(data => setCars(data))
     } , [])
